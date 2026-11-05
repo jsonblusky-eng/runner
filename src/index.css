@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --tooltip-bg: #ffffff;
+  --tooltip-border: #e4e4e7;
+  --tooltip-text: #18181b;
+  --chart-grid: #e4e4e7;
+  --chart-axis: #71717a;
+}
+
+.dark {
+  --tooltip-bg: #18181b;
+  --tooltip-border: #3f3f46;
+  --tooltip-text: #fafafa;
+  --chart-grid: #27272a;
+  --chart-axis: #a1a1aa;
+  color-scheme: dark;
+}
+
+@layer base {
+  html {
+    @apply bg-zinc-50 antialiased dark:bg-zinc-950;
+    -webkit-tap-highlight-color: transparent;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    @apply min-h-dvh bg-zinc-50 font-sans text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100;
+    margin: 0;
+  }
+
+  #root {
+    min-height: 100dvh;
+  }
+
+  input,
+  textarea,
+  select {
+    font-size: 16px;
+  }
+
+  ::selection {
+    @apply bg-accent-200 text-accent-950;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
